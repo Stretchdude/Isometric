@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Isometric_Test with libraries in sub-folder">
+	
+	<property name="src.dir"     value="src"/>
+	<property name="build.dir"   value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="jar.dir"     value="${build.dir}/jar"/>
+	<property name="resources.dir"    		value="res"/>
+	<property name="resources.game.dir"     value="res/game"/>
+	
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement.jar">
+            <manifest>
+                <attribute name="Main-Class" value="de.immerfroehlich.Main"/>
+                <attribute name="Class-Path" value=". IsometricMovement_lib/junit.jar IsometricMovement_lib/org.hamcrest.core_1.1.0.v20090501071000.jar IsometricMovement_lib/jinput.jar IsometricMovement_lib/lwjgl.jar IsometricMovement_lib/slick.jar IsometricMovement_lib/kollider-v0.3.jar"/>
+            </manifest>
+            <fileset dir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/bin"/>
+        </jar>
+        <delete dir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <mkdir dir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Programme/eclipse/plugins/org.junit_4.8.1.v4_8_1_v20100427-1100/junit.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Programme/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/lib/jinput.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/lib/lwjgl.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/lib/slick.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+        <copy file="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/lib/kollider-v0.3.jar" todir="/home/andreasf/bin/Entwicklung/games_eclipse_workspace/Isometric_Test/build/IsometricMovement_lib"/>
+    </target>
+	
+	<target name="zip_game_files">
+		<zip destfile="${resources.dir}/game.zip"
+		       basedir="${resources.game.dir}"/>
+	</target>
+</project>

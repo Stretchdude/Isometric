@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="isometric" width="30" height="30" tilewidth="64" tileheight="31">
+ <tileset name="ttd" firstgid="1" tilewidth="64" tileheight="31">
+  <image source="res/ttd-test.png" trans="000000"/>
+  <tile id="12">
+   <properties>
+    <property name="shape" value="circle"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="shape" value="square"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Ebene 0" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3DAQ0AAAzDoM6/6Qs5JKyaqqqq7x6slrLfEA4AAA==
+  </data>
+ </layer>
+ <layer name="Ebene 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAGNgGAUjFfACMRMWzEtje5lJFB+1d2jZy8eAPV3x0djeUTAKRsEoGAWjYBSMglFAOgAAfmlvNhAOAAA=
+  </data>
+ </layer>
+ <layer name="Ebene 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3SwQkAIAwEwTyV9N+vlmAgEIQZuM++L4JJ624Xeqcsdv7hVwAAvDinQ45AEA4AAA==
+  </data>
+ </layer>
+</map>
