@@ -21,18 +21,28 @@ final class DrawingSequenceSorter {
 			int x2 = (int) pos2.x;
 			int y2 = (int) pos2.y;
 			
-			if(o1.getLayer() < o2.getLayer()){
-				return -1;
+			//same layer
+			if (o1.getLayer() == o2.getLayer()) {
+				//same row
+				if(y1 == y2) {
+					if(x1 < x2) return -1;
+					else if (x1 > x2) return 1;
+					else if (x1 == x2) return 0;
+				}
+				//different row
+				else {
+					if(y1 < y2) return -1;
+					else if (y1 > y2) return 1;
+				}
+			}
+			//different layer
+			else {
+				if(o1.getLayer() < o2.getLayer()) return -1;
+				else if (o1.getLayer() > o2.getLayer()) return 1;
 			}
 			
-			if(x1 < x2 && y1 <= y2) {
-				return -1;
-			}
-			else if(x1 == x2 && y1 == y2){
-				return 0;
-			}
-
-			return 1;
+			throw new IllegalStateException("Not all possibilities covered. Rethink it.");
+			
 		}
 		
 	}
